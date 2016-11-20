@@ -16,7 +16,7 @@
 [merge]
   tool = opendiff
 [push]
-  default = matching
+  default = simple
 [alias]
   ck = checkout
   cm = commit -a -m
