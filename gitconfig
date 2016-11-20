@@ -17,6 +17,10 @@
   tool = opendiff
 [push]
   default = simple
+[pull]
+  rebase = true
+[rerere]
+  enabled = true
 [alias]
   ck = checkout
   cm = commit -a -m
@@ -24,8 +28,10 @@
   pushom = push origin master
   rbom = rebase origin/master
   mt = !git checkout master && git status
+  s = status -s
   st = status
   re = remote
   br = branch
   ft = fetch
+  lg = log --oneline --decorate --all --graph
   lgn = log --name-only
