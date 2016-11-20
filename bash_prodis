@@ -1,0 +1,90 @@
+# ----------------------------------------
+# Prodis' configuration
+# ----------------------------------------
+
+# Ensure that the /usr/local/bin path is before /usr/bin
+export PATH=/usr/local/bin:$PATH
+
+# MySQL
+export PATH=/usr/local/mysql/bin:$PATH
+# export DYLD_LIBRARY_PATH=/usr/local/mysql/lib:$DYLD_LIBRARY_PATH
+
+# Add RVM to PATH for scripting
+PATH=$PATH:$HOME/.rvm/bin
+
+# Load RVM into a shell session *as a function*
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+
+# Git
+source ~/.git_completion.sh
+
+# Bash with Git branch (no RVM)
+# export PS1='\[\033[35m\]\u\[\033[33m\] \w \[\033[36m\]`~/.rvm/bin/rvm-prompt i v`\[\033[31m\] `git branch 2> /dev/null | grep -e ^* | sed -E  s/^\\\\\*\ \(.+\)$/\(\\\\\1\)\ /`\[\033[33m\]$\[\033[00m\] '
+# export PS1='\[\033[35m\]|>\[\033[33m\] \w \[\033[36m\]`~/.rvm/bin/rvm-prompt v`\[\033[31m\] `git branch 2> /dev/null | grep -e ^* | sed -E  s/^\\\\\*\ \(.+\)$/\(\\\\\1\)\ /`\[\033[34m\]$\[\033[00m\] '
+export PS1='\[\033[33m\] \w \[\033[36m\]`~/.rvm/bin/rvm-prompt v`\[\033[31m\] `git branch 2> /dev/null | grep -e ^* | sed -E  s/^\\\\\*\ \(.+\)$/\(\\\\\1\)\ /`\[\033[34m\]$\[\033[00m\] '
+
+# iTerm
+test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
+
+# Homebrew Bash Completion
+if [ -f $(brew --prefix)/etc/bash_completion ]; then
+  . $(brew --prefix)/etc/bash_completion
+fi
+
+# Shortcuts
+alias ls='ls -G'
+alias ll='ls -la'
+alias ms='mysql -uroot'
+alias bx='bundle exec'
+alias rake='bx rake'
+alias rmswp='find . -name *.swp | xargs rm'
+alias xx='exit'
+alias x='echo Eis que surge o X da questão...'
+alias hiddenfilesyes='defaults write com.apple.Finder AppleShowAllFiles YES'
+alias hiddenfilesno='defaults write com.apple.Finder AppleShowAllFiles NO'
+
+# Shortcuts Rails
+alias rc='rails console'
+alias rs='rails server'
+alias rg='rails generate'
+alias rr='rails runner'
+alias dcmdev="RAILS_ENV=development rake db:drop db:create db:migrate"
+alias dcmtest="RAILS_ENV=test rake db:drop db:create db:migrate"
+
+# Servers
+alias run-postgres='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start'
+alias stop-postgres='pg_ctl -D /usr/local/var/postgres stop'
+alias run-rabbit='/usr/local/sbin/rabbitmq-server'
+alias run-redis='/usr/local/bin/redis-server'
+
+# Go
+export PATH=$PATH:/usr/local/go/bin
+export GOPATH=$HOME/work/go
+export PATH=$PATH:$GOPATH/bin
+alias gopath='cd $GOPATH'
+alias gobin='cd $GOPATH/bin'
+alias gopkg='cd $GOPATH/pkg/darwin_amd64/github.com/prodis'
+alias gosrc='cd $GOPATH/src/github.com/prodis'
+
+
+# ----------------------------------------
+# Prodis' work
+# ----------------------------------------
+
+# Gems
+export GEMSPATH=$HOME/work/gems
+
+alias cep='cd $GEMSPATH/correios-cep'
+alias frete='cd $GEMSPATH/correios-frete'
+alias sro='cd $GEMSPATH/correios-sro-xml'
+alias httpme='cd $GEMSPATH/http_me'
+alias logme='cd $GEMSPATH/log-me'
+alias labeled='cd $GEMSPATH/rails-labeled_log'
+alias bool='cd $GEMSPATH/wannabe_bool'
+
+# Prodis
+export PRODISPATH=$HOME/work/prodis
+alias dotfiles='cd $PRODISPATH/dotfiles'
+alias vimfiles='cd $PRODISPATH/vimfiles'
+
+

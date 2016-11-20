@@ -1,0 +1,31 @@
+[user]
+  name = Prodis
+  email = prodis@gmail.com
+[github]
+  user = prodis
+[color]
+  branch = auto
+  diff = auto
+  interactive = auto
+  status = auto
+  ui = true
+[core]
+  autocrlf = input
+  editor = vim
+  excludesfile = ~/.gitignore
+[merge]
+  tool = opendiff
+[push]
+  default = matching
+[alias]
+  ck = checkout
+  cm = commit -a -m
+  pullom = pull origin master
+  pushom = push origin master
+  rbom = rebase origin/master
+  mt = !git checkout master && git status
+  st = status
+  re = remote
+  br = branch
+  ft = fetch
+  lgn = log --name-only
