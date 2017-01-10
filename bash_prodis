@@ -55,6 +55,9 @@ alias rr='rails runner'
 alias dcmdev="RAILS_ENV=development rake db:drop db:create db:migrate"
 alias dcmtest="RAILS_ENV=test rake db:drop db:create db:migrate"
 
+# Shortcuts Elixir
+alias is='iex -S mix'
+
 # Servers
 alias run-postgres='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start'
 alias stop-postgres='pg_ctl -D /usr/local/var/postgres stop'
