@@ -9,6 +9,9 @@ export PATH=/usr/local/bin:$PATH
 export PATH=/usr/local/mysql/bin:$PATH
 # export DYLD_LIBRARY_PATH=/usr/local/mysql/lib:$DYLD_LIBRARY_PATH
 
+# Curl installed via Homebrew
+export PATH=/usr/local/opt/curl/bin:$PATH
+
 # Add RVM to PATH for scripting
 PATH=$PATH:$HOME/.rvm/bin
 
