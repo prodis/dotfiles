@@ -58,9 +58,6 @@ alias rr='rails runner'
 alias dcmdev="RAILS_ENV=development rake db:drop db:create db:migrate"
 alias dcmtest="RAILS_ENV=test rake db:drop db:create db:migrate"
 
-# Shortcuts Elixir
-alias is='iex -S mix'
-
 # Servers
 alias run-postgres='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start'
 alias stop-postgres='pg_ctl -D /usr/local/var/postgres stop'
@@ -75,6 +72,10 @@ alias gopath='cd $GOPATH'
 alias gobin='cd $GOPATH/bin'
 alias gopkg='cd $GOPATH/pkg/darwin_amd64/github.com/prodis'
 alias gosrc='cd $GOPATH/src/github.com/prodis'
+
+# Elixir
+export ERL_AFLAGS='-kernel shell_history enabled'
+alias is='iex -S mix'
 
 
 # ----------------------------------------
