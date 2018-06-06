@@ -26,6 +26,7 @@
   cm = commit -a -m
   pullom = pull origin master
   pushom = push origin master
+  pushf = push --force-with-lease
   rbom = rebase origin/master
   mt = !git checkout master && git status
   s = status -s
