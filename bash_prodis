@@ -35,7 +35,7 @@ source ~/.git_completion.sh
 # export PS1='🏀 \[\033[33m\] \w \[\033[36m\]`~/.rvm/bin/rvm-prompt v`\[\033[31m\] `git branch 2> /dev/null | grep -e ^* | sed -E  s/^\\\\\*\ \(.+\)$/\(\\\\\1\)\ /`\[\033[34m\]$\[\033[00m\] '
 
 # No more ruby version:
-export PS1='🏀 \[\033[33m\] \w \[\033[31m\]`git branch 2> /dev/null | grep -e ^* | sed -E  s/^\\\\\*\ \(.+\)$/\(\\\\\1\)\ /`\[\033[34m\]$\[\033[00m\] '
+export PS1='🏀 \[\033[33m\] \w \[\033[35m\]`git branch 2> /dev/null | grep -e ^* | sed -E  s/^\\\\\*\ \(.+\)$/\(\\\\\1\)\ /`\[\033[34m\]$\[\033[00m\] '
 
 # Basketball symbol
 # 🏀
