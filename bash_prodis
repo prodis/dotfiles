@@ -12,8 +12,15 @@ export PATH=/usr/local/mysql/bin:$PATH
 # Curl installed via Homebrew
 export PATH=/usr/local/opt/curl/bin:$PATH
 
+# Python 2
+# This formula is keg-only, which means it was not symlinked into /usr/local,
+# because this is an alternate version of another formula.
+#
+# If you need to have this software first in your PATH run:
+# export PATH="/usr/local/opt/python@2/bin:$PATH"
+
 # Add RVM to PATH for scripting
-PATH=$PATH:$HOME/.rvm/bin
+export PATH="$PATH:$HOME/.rvm/bin"
 
 # Load RVM into a shell session *as a function*
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
@@ -25,7 +32,10 @@ source ~/.git_completion.sh
 # export PS1='\[\033[35m\]\u\[\033[33m\] \w \[\033[36m\]`~/.rvm/bin/rvm-prompt i v`\[\033[31m\] `git branch 2> /dev/null | grep -e ^* | sed -E  s/^\\\\\*\ \(.+\)$/\(\\\\\1\)\ /`\[\033[33m\]$\[\033[00m\] '
 # export PS1='\[\033[35m\]|>\[\033[33m\] \w \[\033[36m\]`~/.rvm/bin/rvm-prompt v`\[\033[31m\] `git branch 2> /dev/null | grep -e ^* | sed -E  s/^\\\\\*\ \(.+\)$/\(\\\\\1\)\ /`\[\033[34m\]$\[\033[00m\] '
 # export PS1='\[\033[33m\] \w \[\033[36m\]`~/.rvm/bin/rvm-prompt v`\[\033[31m\] `git branch 2> /dev/null | grep -e ^* | sed -E  s/^\\\\\*\ \(.+\)$/\(\\\\\1\)\ /`\[\033[34m\]$\[\033[00m\] '
-export PS1='🏀 \[\033[33m\] \w \[\033[36m\]`~/.rvm/bin/rvm-prompt v`\[\033[31m\] `git branch 2> /dev/null | grep -e ^* | sed -E  s/^\\\\\*\ \(.+\)$/\(\\\\\1\)\ /`\[\033[34m\]$\[\033[00m\] '
+# export PS1='🏀 \[\033[33m\] \w \[\033[36m\]`~/.rvm/bin/rvm-prompt v`\[\033[31m\] `git branch 2> /dev/null | grep -e ^* | sed -E  s/^\\\\\*\ \(.+\)$/\(\\\\\1\)\ /`\[\033[34m\]$\[\033[00m\] '
+
+# No more ruby version:
+export PS1='🏀 \[\033[33m\] \w \[\033[31m\]`git branch 2> /dev/null | grep -e ^* | sed -E  s/^\\\\\*\ \(.+\)$/\(\\\\\1\)\ /`\[\033[34m\]$\[\033[00m\] '
 
 # Basketball symbol
 # 🏀
@@ -38,23 +48,22 @@ if [ -f $(brew --prefix)/etc/bash_completion ]; then
   . $(brew --prefix)/etc/bash_completion
 fi
 
-# Shortcuts
+# Bash Shortcuts
 alias ls='ls -G'
 alias ll='ls -la'
-alias ms='mysql -uroot'
-alias bx='bundle exec'
-alias rake='bx rake'
 alias rmswp='find . -name *.swp | xargs rm'
 alias xx='exit'
 alias x='echo Eis que surge o X da questão...'
 alias hiddenfilesyes='defaults write com.apple.Finder AppleShowAllFiles YES'
 alias hiddenfilesno='defaults write com.apple.Finder AppleShowAllFiles NO'
 
-# Shortcuts Rails
+# Rails
 alias rc='rails console'
 alias rs='rails server'
 alias rg='rails generate'
 alias rr='rails runner'
+alias bx='bundle exec'
+alias rake='bx rake'
 alias dcmdev="RAILS_ENV=development rake db:drop db:create db:migrate"
 alias dcmtest="RAILS_ENV=test rake db:drop db:create db:migrate"
 
@@ -77,12 +86,14 @@ alias gosrc='cd $GOPATH/src/github.com/prodis'
 export ERL_AFLAGS='-kernel shell_history enabled'
 alias is='iex -S mix'
 
+# MySQL
+alias ms='mysql -uroot'
 
 # ----------------------------------------
 # Prodis' work
 # ----------------------------------------
 
-# Gems
+# Ruby Gems
 export GEMSPATH=$HOME/work/gems
 
 alias cep='cd $GEMSPATH/correios-cep'
