@@ -85,7 +85,8 @@ alias gosrc='cd $GOPATH/src/github.com/prodis'
 # Elixir
 export ERL_AFLAGS='-kernel shell_history enabled'
 alias is='iex -S mix'
-alias mt='mix test --trace'
+alias mt='mix test'
+alias mtt='mix test --trace'
 
 # MySQL
 alias ms='mysql -uroot'
